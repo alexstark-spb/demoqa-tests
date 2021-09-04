@@ -9,6 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTests {
+    String userName = "Alex";
+    String userEmail = "alexstark@mail.ru";
+    String currentAddress = "S.Petersburg";
+    String permanentAddress = "Nevskiy40";
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
@@ -16,16 +20,16 @@ public class TextBoxTests {
     @Test
     void fillFormTest() {
         open("https://demoqa.com/text-box");
-        $("#userName").setValue("Alex");
-        $("#userEmail").setValue("alexstark@mail.ru");
-        $("#currentAddress").setValue("S.Petersburg");
-        $("#permanentAddress").setValue("Nevskiy40");
+        $("#userName").setValue(userName);
+        $("#userEmail").setValue(userEmail);
+        $("#currentAddress").setValue(currentAddress);
+        $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
 
-        $("#output #name").shouldHave(text("Alex"));
-        $("#output #email").shouldHave(text("alexstark@mail.ru"));
-        $("#output #currentAddress").shouldHave(text("S.Petersburg"));
-        $("#output #permanentAddress").shouldHave(text("yuj"));
+        $("#output #name").shouldHave(text(userName));
+        $("#output #email").shouldHave(text(userEmail));
+        $("#output #currentAddress").shouldHave(text(currentAddress));
+        $("#output #permanentAddress").shouldHave(text(permanentAddress));
 
 
     }

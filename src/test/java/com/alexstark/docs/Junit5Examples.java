@@ -1,5 +1,6 @@
 package com.alexstark.docs;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -27,6 +28,12 @@ class Junit5Examples {
     void afterEach() {
         System.out.println("After test!\n");
     }
+
+    @AfterEach
+    void afterEach2() {
+        Selenide.closeWebDriver();
+    }
+
 
     @Test
     void firstTest() {
