@@ -25,11 +25,12 @@ public class PracticeForm {
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
+        Configuration.baseUrl = "https://demoqa.com";
     }
 
     @Test
     void fillFormTest() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
