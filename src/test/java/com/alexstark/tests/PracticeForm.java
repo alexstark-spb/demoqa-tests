@@ -9,18 +9,18 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeForm {
-    String firstName = "Alex";
-    String lastName = "Derevyanko";
-    String email = "alexstark@mail.ru";
-    String gender = "Male";
-    String mobile = "9995551122";
-    String month = "May";
-    String year = "2022";
-    String subjects = "Computer science";
-    String hobbies1 = "Sports", hobbies2 = "Reading" ;
-    String Address = "S.Petersburg,Nevskiy st. house 40";
-    String state = "Rajasthan";
-    String city = "Jaipur";
+    private String firstName = "Alex";
+    private String lastName = "Derevyanko";
+    private String email = "alexstark@mail.ru";
+    private String gender = "Male";
+    private String mobile = "9995551122";
+    private String month = "May";
+    private String year = "2022";
+    private String subjects = "Computer science";
+    private String hobbies1 = "Sports", hobbies2 = "Reading" ;
+    private String Address = "S.Petersburg,Nevskiy st. house 40";
+    private String state = "Rajasthan";
+    private String city = "Jaipur";
 
     @BeforeAll
     static void beforeAll() {
@@ -52,7 +52,6 @@ public class PracticeForm {
         $("#submit").click();
 
 
-
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Alex Derevyanko"));
         $(".table-responsive").shouldHave(text("alexstark@mail.ru"));
@@ -64,10 +63,5 @@ public class PracticeForm {
         $(".table-responsive").shouldHave(text("test.jpg"));
         $(".table-responsive").shouldHave(text("S.Petersburg,Nevskiy st. house 40"));
         $(".table-responsive").shouldHave(text("Rajasthan Jaipur"));
-
-
-
-
-
     }
 }
