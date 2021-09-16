@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests {
+public class TextBoxTest {
     String userName = "Alex";
     String userEmail = "alexstark@mail.ru";
     String currentAddress = "S.Petersburg";

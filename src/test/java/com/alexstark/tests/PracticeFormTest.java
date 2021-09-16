@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeForm {
+public class PracticeFormTest {
     private String firstName = "Alex";
     private String lastName = "Derevyanko";
     private String email = "alexstark@mail.ru";
