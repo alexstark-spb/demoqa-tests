@@ -1,22 +1,13 @@
 package com.alexstark.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
+import static com.alexstark.tests.TestData.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTest {
-    String userName = "Alex";
-    String userEmail = "alexstark@mail.ru";
-    String currentAddress = "S.Petersburg";
-    String permanentAddress = "Nevskiy40";
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.startMaximized = true;
-    }
+public class TextBoxTest extends TestBase{
+
     @Test
     void fillFormTest() {
         open("https://demoqa.com/text-box");
@@ -30,7 +21,6 @@ public class TextBoxTest {
         $("#output #email").shouldHave(text(userEmail));
         $("#output #currentAddress").shouldHave(text(currentAddress));
         $("#output #permanentAddress").shouldHave(text(permanentAddress));
-
 
     }
 }
