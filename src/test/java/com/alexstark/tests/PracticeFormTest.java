@@ -9,18 +9,19 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
-    private String firstName = "Alex";
-    private String lastName = "Derevyanko";
-    private String email = "alexstark@mail.ru";
-    private String gender = "Male";
-    private String mobile = "9995551122";
-    private String month = "May";
-    private String year = "2022";
-    private String subjects = "Computer science";
-    private String hobbies1 = "Sports", hobbies2 = "Reading" ;
-    private String Address = "S.Petersburg,Nevskiy st. house 40";
-    private String state = "Rajasthan";
-    private String city = "Jaipur";
+    private String firstName = "Alex",
+                   lastName = "Derevyanko",
+                   email = "alexstark@mail.ru",
+                   gender = "Male",
+                   mobile = "9995551122",
+                   month = "May",
+                   year = "2022",
+                   subjects = "Computer science",
+                   hobbies1 = "Sports",
+                   hobbies2 = "Reading",
+                   address = "S.Petersburg,Nevskiy st. house 40",
+                   state = "Rajasthan",
+                   city = "Jaipur";
 
     @BeforeAll
     static void beforeAll() {
@@ -44,7 +45,7 @@ public class PracticeFormTest {
         $("#hobbiesWrapper").$(byText(hobbies1)).click();
         $("#hobbiesWrapper").$(byText(hobbies2)).click();
         $("#uploadPicture").uploadFromClasspath("image/test.jpg");
-        $("#currentAddress").setValue(Address );
+        $("#currentAddress").setValue(address);
         $("#submit").scrollIntoView(true);
         $("#stateCity-wrapper").$("#state").click();
         $("#state").$(byText(state)).click();
@@ -54,15 +55,15 @@ public class PracticeFormTest {
 
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Alex Derevyanko"));
-        $(".table-responsive").shouldHave(text("alexstark@mail.ru"));
-        $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("9995551122"));
-        $(".table-responsive").shouldHave(text("03 May,2022"));
-        $(".table-responsive").shouldHave(text("Computer Science"));
-        $(".table-responsive").shouldHave(text("Sports, Reading"));
+        $(".table-responsive").shouldHave(text(firstName+" "+lastName));
+        $(".table-responsive").shouldHave(text(email));
+        $(".table-responsive").shouldHave(text(gender));
+        $(".table-responsive").shouldHave(text(mobile));
+        $(".table-responsive").shouldHave(text("03 "+month+","+year));
+        $(".table-responsive").shouldHave(text(subjects ));
+        $(".table-responsive").shouldHave(text(hobbies1+", "+hobbies2));
         $(".table-responsive").shouldHave(text("test.jpg"));
-        $(".table-responsive").shouldHave(text("S.Petersburg,Nevskiy st. house 40"));
-        $(".table-responsive").shouldHave(text("Rajasthan Jaipur"));
+        $(".table-responsive").shouldHave(text(address));
+        $(".table-responsive").shouldHave(text(state+" "+city));
     }
 }

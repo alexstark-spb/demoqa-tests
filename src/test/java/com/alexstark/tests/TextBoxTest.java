@@ -9,13 +9,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTest {
-    String userName = "Alex";
-    String userEmail = "alexstark@mail.ru";
-    String currentAddress = "S.Petersburg";
-    String permanentAddress = "Nevskiy40";
+    private String userName = "Alex",
+                   userEmail = "alexstark@mail.ru",
+                   currentAddress = "S.Petersburg",
+                   permanentAddress = "Nevskiy40";
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
+
     }
     @Test
     void fillFormTest() {
@@ -30,7 +31,6 @@ public class TextBoxTest {
         $("#output #email").shouldHave(text(userEmail));
         $("#output #currentAddress").shouldHave(text(currentAddress));
         $("#output #permanentAddress").shouldHave(text(permanentAddress));
-
 
     }
 }
