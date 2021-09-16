@@ -1,12 +1,17 @@
 package com.alexstark.tests;
 
 import org.junit.jupiter.api.Test;
-import static com.alexstark.tests.TestData.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTest extends TestBase{
+
+    private String
+            userName = "Alex",
+            userEmail = "alexstark@mail.ru",
+            currentAddress = "S.Petersburg",
+            permanentAddress = "Nevskiy40";
 
     @Test
     void fillFormTest() {
