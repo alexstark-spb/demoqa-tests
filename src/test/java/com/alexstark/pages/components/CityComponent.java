@@ -9,6 +9,5 @@ public class CityComponent {
         $("#stateCity-wrapper").$("#city").click();
         $("#city").$(byText(city)).click();
 
-
     }
 }

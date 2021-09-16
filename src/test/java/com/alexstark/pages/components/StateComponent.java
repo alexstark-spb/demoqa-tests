@@ -9,7 +9,6 @@ public class StateComponent {
         $("#stateCity-wrapper").$("#state").click();
         $("#state").$(byText(state)).click();
 
-
     }
 }
 
