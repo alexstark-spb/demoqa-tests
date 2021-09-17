@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class PracticeFormTest extends TestBase {
 
     private String
-            firstName = "Alex",
+            firstName = "Alexander",
             lastName = "Derevyanko",
             email = "alexstark@mail.ru",
             gender = "Male",

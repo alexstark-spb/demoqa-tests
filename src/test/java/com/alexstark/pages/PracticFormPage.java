@@ -95,21 +95,17 @@ public class PracticFormPage {
         return this;
     }
 
-    public PracticFormPage typeSubmit() {
+    public void typeSubmit() {
         submitButton.click();
-        return this;
     }
 
-    public PracticFormPage checkResultHeader(String modalTitle) {
+    public void checkResultHeader(String modalTitle) {
         $("#example-modal-sizes-title-lg").shouldHave(text(modalTitle));
-        return this;
-
     }
 
     public PracticFormPage checkResultBody(String key, String value) {
         $(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
         return this;
-
     }
 
 }
