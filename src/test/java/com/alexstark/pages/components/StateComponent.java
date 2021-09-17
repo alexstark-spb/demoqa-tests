@@ -8,7 +8,6 @@ public class StateComponent {
     public void setState(String state) {
         $("#stateCity-wrapper").$("#state").click();
         $("#state").$(byText(state)).click();
-
     }
 }
 

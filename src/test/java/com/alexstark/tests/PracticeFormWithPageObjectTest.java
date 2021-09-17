@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 public class PracticeFormWithPageObjectTest extends TestBase {
 
+    PracticFormPage practicFormPage = new PracticFormPage();
+
     private String
             firstName = "Alexander",
             lastName = "Derevyanko",
@@ -23,12 +25,9 @@ public class PracticeFormWithPageObjectTest extends TestBase {
             nameOfPicture = "test.jpg",
             exampleModalTitle = "Thanks for submitting the form";
 
-    PracticFormPage practicFormPage = new PracticFormPage();
-
     @Test
     void fillFormTest() {
         practicFormPage.openPage();
-
         practicFormPage.typeFirstName(firstName)
                    .typeLastName(lastName)
                    .typeEmail(email)

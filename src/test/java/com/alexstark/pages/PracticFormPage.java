@@ -107,5 +107,4 @@ public class PracticFormPage {
         $(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
         return this;
     }
-
 }
