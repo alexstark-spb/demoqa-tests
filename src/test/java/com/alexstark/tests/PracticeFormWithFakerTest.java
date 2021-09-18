@@ -19,8 +19,7 @@ public class PracticeFormWithFakerTest extends TestBase {
             month = "June",
             year = "1992",
             subjects = "Computer science",
-            hobbies1 = "Sports",
-            hobbies2 = "Reading",
+            hobbies[]  = {"Sports","Reading"},
             address = faker.address().streetAddress(),
             state = "Rajasthan",
             city = "Jaipur",
@@ -37,7 +36,7 @@ public class PracticeFormWithFakerTest extends TestBase {
                 .typeMobile(mobile)
                 .typeCalendar(day, month, year)
                 .typeSubjects(subjects)
-                .typeHobbies(hobbies1, hobbies2)
+                .typeHobbies(hobbies)
                 .typePicture(nameOfPicture)
                 .typeAddress(address)
                 .typeState(state)
@@ -50,10 +49,9 @@ public class PracticeFormWithFakerTest extends TestBase {
                 .checkResultBody("Mobile", mobile)
                 .checkResultBody("Date of Birth", day + " " + month + "," + year)
                 .checkResultBody("Subjects", subjects)
-                .checkResultBody("Hobbies", hobbies1 + ", " + hobbies2)
+                .checkResultBody("Hobbies", hobbies[0] + ", " + hobbies[1])
                 .checkResultBody("Picture", nameOfPicture)
                 .checkResultBody("Address", address)
                 .checkResultBody("State and City", state + " " + city);
-
     }
 }

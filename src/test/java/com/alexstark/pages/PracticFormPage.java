@@ -69,9 +69,10 @@ public class PracticFormPage {
         return this;
     }
 
-    public PracticFormPage typeHobbies(String hobbies1, String hobbies2) {
-        hobbiesCheckBox.$(byText(hobbies1)).click();
-        hobbiesCheckBox.$(byText(hobbies2)).click();
+    public PracticFormPage typeHobbies(String [] hobbies) {
+        for (var hobby : hobbies) {
+            hobbiesCheckBox.$(byText(hobby)).click();
+        }
         return this;
     }
 
